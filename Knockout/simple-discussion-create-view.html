@@ -1,0 +1,7 @@
+<form data-bind="with: $root.case">
+  <label>Subject</label>
+  <input type="text" data-bind="value: subject" />
+  <label>Content</label>
+  <input type="text" data-bind="value: content.text" />
+  <button data-bind="click: $root.create">Submit</button>
+</form>

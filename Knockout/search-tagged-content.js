@@ -20,7 +20,7 @@ var viewModel = function (tagTree) {
             tags = tags.replace(/^,|,$/g, '');
             self.tags = tags;
             self.loading(true);
-            self.url('/api/core/v3/contents?filter=tag(' + tags + ')&filter=place(' + comUrl + '/api/core/v3/places/1438)&count=100);
+            self.url('/api/core/v3/contents?filter=tag(' + tags + ')&filter=place(' + comUrl + '/api/core/v3/places/1438)&count=100');
             self.items.removeAll();
         }
     }).extend({ throttle: 1000 });
@@ -53,4 +53,6 @@ var viewModel = function (tagTree) {
     });
 }
 
-ko.applyBindings(new viewModel(downloads));
+$.ajax({ url: 'path-to-json-tag-tree', method: 'GET', dataType: 'json'}).done(function (tagTree) {
+    ko.applyBindings(new viewModel(tagTree));
+});

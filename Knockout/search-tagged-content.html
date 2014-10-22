@@ -1,0 +1,48 @@
+<table id="downloadSearch">
+  <tr>
+      <td>
+          <!-- This sets the options for the first dropdown box -->
+          <select style="width: 200px" size="1" data-bind="options: options, optionsText: 'name', value: selectedOption"></select>
+      </td>
+      <td>&nbsp;</td>
+      <td>
+          <select style="width: 250px" size="1" data-bind="options: selectedOption().options, optionsText: 'name', value: selectedProduct, optionsCaption: 'Select a Product...'"></select>
+      </td>
+      <td>
+          <select data-bind="value: type">
+              <option value="">All</option>                      
+              <option value="download">Installers</option>
+              <option value="patch">Patches</option>
+              <option value="sampledata">Sample Data</option>
+              <option value="readme">Readmes</option>
+          </select>
+      </td>
+  </tr>
+</table>
+
+<!-- ko if: loading -->
+  <p class="font-color-meta-light"><img src="/images/jive-image-loading.gif" alt="Loading...">Loading...</p>
+<!-- /ko -->
+
+<!-- ko if: loading() == false && items().length == 0 -->
+  <p style="font-family: lightText;">No Results</p>
+<!-- /ko -->
+
+<!-- ko if: loading() == false && items().length > 0 -->
+  <table cellpadding="0" cellspacing="0" border="0" >
+      <tbody data-bind="foreach: items">
+       <tr class='jive-table-row-even'>
+         <td class="jive-table-cell-type">
+              <img class="jive-icon-med jive-icon-doctype-compressed" src="/6.0.2.0/images/transparent.png" alt="">
+         </td>
+         <td class="jive-table-cell-title">
+              <a data-bind="text: subject, attr: { href: resources.html.ref }" ></a>
+         </td>
+       </tr>
+      </tbody>
+  </table> 
+<!-- /ko -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="/plugins/se-entity/resources/script/knockout.js" ></script>
+<script src="/plugins/se-entity/resources/script/knockout.mapping.js" ></script>

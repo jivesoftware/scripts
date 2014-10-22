@@ -23,10 +23,12 @@ declare function jive:process-response($responseBody as xs:string) as node() {
 };
 
 (: Retrieve a single item :)
-declare function jive:get-item($request-template as node(), $uri as xs:string) as node() {
-  jive:process-response(
+declare function jive:get-item($request-template as node(), $uri as xs:string?) as node()? {
+  if($uri) then
+    jive:process-response(
      http:send-request(
        jive:modify-request-template($request-template, 'GET'), $uri)[2])
+  else ()
 };
 
 (: Update a single item :)

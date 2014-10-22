@@ -1,0 +1,52 @@
+{
+  "options":
+    [
+      {
+          "name": "Show All",
+          "tags": "",
+          "options": [
+            {
+                "name": "Show All",
+                "tags": ""
+            }
+          ]
+      },
+      {
+          "name": "ArcFM 10.2.1a",
+          "tags": "10.2.1a",
+          "options": [
+            {
+                "name": "ArcFM Desktop, Designer, Extensions, and ArcFM Replication",
+                "tags": ""
+            },
+            {
+                "name": "ArcFM Server and 64-bit Object Reader",
+                "tags": "server"
+            },
+            {
+                "name": "Responder",
+                "tags": "responder"
+            }
+          ]
+      },
+      {
+          "name": "ArcFM 10.2.1",
+          "tags": "10.2.1",
+          "options": [
+            {
+                "name": "ArcFM Desktop, Designer, Extensions, and ArcFM Replication",
+                "tags": ""
+            },
+            {
+                "name": "ArcFM Server and 64-bit Object Reader",
+                "tags": "server"
+            },
+            {
+                "name": "Responder",
+                "tags": "responder"
+            }
+          ]
+      }
+    ]
+};
+    
